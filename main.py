@@ -2,9 +2,10 @@ import csv
 import random
 
 # custom params
-importColumn = [5, 8, 9, 10, 11]
 importCSVname = "csv-doc.csv"
 exportMDname = "export.md"
+
+importColumn = [5, 8, 9, 10, 11]
 tail = "번 지원자"
 
 ### code ###
