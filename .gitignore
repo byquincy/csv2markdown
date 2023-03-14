@@ -1,3 +1,4 @@
 
 *.md
 *.csv
+.DS_Store
