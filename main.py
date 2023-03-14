@@ -1,14 +1,17 @@
 import csv
 import random
 
-# custom params
+
+### custom params ###
 importCSVname = "csv-doc.csv"
 exportMDname = "export.md"
 
 importColumn = [5, 8, 9, 10, 11]
 tail = "번 지원자"
+### end           ###
 
-### code ###
+
+### code          ###
 columnList = []
 dataList = []
 
@@ -20,6 +23,7 @@ with open(importCSVname, 'r') as csvFile:
         for columnNum in importColumn:
             dataList[-1].append(line[columnNum])
 
+# post processing
 columnList = dataList[0]
 del dataList[0]
 random.shuffle(dataList)
@@ -27,15 +31,16 @@ random.shuffle(dataList)
 # export Markdown
 with open(exportMDname, 'w') as markdownFile:
     for i in range(len(dataList)):
-        # heading
+        # write heading
         markdownFile.write("# " + str(i+1) + tail + "\n")
 
-        # data
+        # write data
         for j in range(len(columnList)):
             markdownFile.write("### " + columnList[j] + "\n")
             markdownFile.write(dataList[i][j] + "\n")
         
-        # separate
+        # separate heading
         markdownFile.write("\n\n\n\n\n\n")
+
 # done
 print("Done!")
