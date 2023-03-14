@@ -34,10 +34,8 @@ with open(exportMDname, 'w') as markdownFile:
         for j in range(len(columnList)):
             markdownFile.write("### " + columnList[j] + "\n")
             markdownFile.write(dataList[i][j] + "\n")
-            markdownFile.write("\n")
         
         # separate
-        markdownFile.write("\n\n")
-
+        markdownFile.write("\n\n\n\n\n\n")
 # done
 print("Done!")
