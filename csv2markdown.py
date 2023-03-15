@@ -7,7 +7,7 @@ importCSVname = "csv-doc.csv"
 exportMDname = "export.md"
 
 importColumn = [5, 8, 9, 10, 11]
-tail = "번 지원자"
+numberForm = "adVirtual %d번 지원자"
 ### end           ###
 
 
@@ -32,7 +32,7 @@ random.shuffle(dataList)
 with open(exportMDname, 'w') as markdownFile:
     for i in range(len(dataList)):
         # write heading
-        markdownFile.write("# " + str(i+1) + tail + "\n")
+        markdownFile.write("# "  +  numberForm%(i+1)  +  "\n")
 
         # write data
         for j in range(len(columnList)):
